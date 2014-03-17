@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'ANSWERS database' %}{% endblock %}
+
+{% block extrastyle %}
+<link rel="shortcut icon" type="image/ico" href="http://www.tampabay.com/universal/images/template/favicon.ico" />
+<link rel="icon" type="image/gif" href="http://www.tampabay.com/universal/images/template/favicon.gif" />
+<style>
+#header{ background-color:#1B5E88; border-bottom: solid 3px #999; }
+#branding h1{ color: #fff; }
+fieldset div.form-row div span.cke_skin_kama {
+    border: 0;
+    padding: 0 !important;
+    float: left;
+}
+.help {
+    clear: left;
+}
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'ANSWERS database' %}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

@@ -26,6 +26,14 @@ NO_RESPONSE = "No response"
 
 base_template = settings.TEMPLATE_BASE if hasattr(settings, 'TEMPLATE_BASE') else "checkup/base.html"
 
+@login_required(login_url='/answers/accounts/login/')
+def dash(request):
+    rdate = datetime.datetime.now()
+    cdict = {
+        'rdate': rdate,
+       }
+    return render(request, 'dash.html', cdict)
+
 #Limit requests to this view to 1,200 per hour from one IP address
 #for both GET and POST. If ratelimited, throw a 403.
 @ratelimit(rate='1200/h', method=None, block=True)
