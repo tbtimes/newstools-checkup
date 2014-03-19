@@ -96,10 +96,11 @@ class RespondentAdmin(admin.ModelAdmin):
 		}),
 	)
 	
-	list_display = ('first_name', 'last_name', 'office_phone', 'email', 
+	list_display = ('first_name', 'last_name', 'gender', 'office_phone', 'email', 
 		'contact_name', 'contact_phone', 'contact_email',)
-
-
+	list_filter = ['group']
+	list_editable = ('gender',)
+	
 class SurveyAdmin(admin.ModelAdmin):
 	list_display = ('name', 'home_url', 'form_chatter', 'display_chatter',)
 	prepopulated_fields = {'home_slug': ('name',)}

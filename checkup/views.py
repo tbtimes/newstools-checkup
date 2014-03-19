@@ -4,6 +4,7 @@ import random
 import datetime
 from collections import OrderedDict
 
+from django.contrib.auth.decorators import login_required
 from django import template
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect, Http404
@@ -26,7 +27,7 @@ NO_RESPONSE = "No response"
 
 base_template = settings.TEMPLATE_BASE if hasattr(settings, 'TEMPLATE_BASE') else "checkup/base.html"
 
-@login_required(login_url='/answers/accounts/login/')
+# @login_required(login_url='/answers/accounts/login/')
 def dash(request):
     rdate = datetime.datetime.now()
     cdict = {

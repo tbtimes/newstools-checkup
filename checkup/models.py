@@ -99,6 +99,9 @@ class Respondent(models.Model):
 	contact_email = models.EmailField(max_length=254, blank=True)
 	#Extra ID field for use in synchronizing respondents/assignments from a spreadsheet.
 	sheet_id = models.IntegerField(default=0)
+	myslug = models.CharField(max_length=100, blank=True)
+	pf_page = models.CharField(max_length=100, blank=True)
+	birth_date = models.DateField(blank=True, null=True)
 	
 	def __unicode__(self):
 		return self.title.short + ' ' + self.first_name + ' ' + self.last_name
