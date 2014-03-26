@@ -23,8 +23,8 @@ class QuestionAdmin(admin.ModelAdmin):
 	list_display = ('question', 'explanation')
 
 class AssignmentAdmin(admin.ModelAdmin):
-	change_list_template = 'admin/change_list_filter_sidebar.html'
-	change_list_filter_template = 'admin/filter_listing.html'
+#	change_list_template = 'admin/change_list_filter_sidebar.html'
+# 	change_list_filter_template = 'admin/filter_listing.html'
 	list_display = ('respondent', 'respondent_link', 'phone', 'email', 'contacted', 'visits',
 		'receipt_confirmed', 'survey_complete', 'confirmation_sent', 'reporter', 'form_url',)
 	list_filter = ('survey', 'reporter', 'contacted', 'receipt_confirmed', 
@@ -38,14 +38,14 @@ class AssignmentAdmin(admin.ModelAdmin):
 		form_url = None
 		if instance.form_slug:
 			form_url = 'http://' + Site.objects.get_current().domain
-			form_url += '/checkup/forms/' + instance.form_slug + '/'
+			form_url += '/answers/checkup/forms/' + instance.form_slug + '/'
 		return form_url
 
 	def display_url(self, instance):
 		display_url = None
 		if instance.display_slug:
 			display_url = 'http://' + Site.objects.get_current().domain
-			display_url += '/checkup/' + instance.survey.home_slug + '/' + instance.display_slug + '/'
+			display_url += '/answers/checkup/' + instance.survey.home_slug + '/' + instance.display_slug + '/'
 		return display_url
 	
 	def visits(self, instance):
@@ -110,7 +110,7 @@ class SurveyAdmin(admin.ModelAdmin):
 		home_url = None
 		if instance.home_slug:
 			home_url = 'http://' + Site.objects.get_current().domain
-			home_url += '/checkup/' + instance.home_slug + '/'
+			home_url += '/answers/checkup/' + instance.home_slug + '/'
 		return home_url
         
 class ContributionAdmin(admin.ModelAdmin):

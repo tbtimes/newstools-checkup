@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     url(r'^answers/accounts/login/', 'django.contrib.auth.views.login'),
     url(r'^answers/admin/', include(admin.site.urls)),
     url(r'^answers/dash/$', 'checkup.views.dash'),
-    url(r'^answers/checkup/$', include('checkup.urls')),
+    url(r'^answers/checkup/', include('checkup.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns()

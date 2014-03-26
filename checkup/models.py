@@ -25,6 +25,7 @@ class Reporter(models.Model):
 	user = models.OneToOneField(User, primary_key=True)
 	title = models.ForeignKey('Title', help_text='Optional title to appear before reporter\'s name.',  blank=True)
 	phone = PhoneNumberField(blank=True)
+	writer_page = models.CharField(max_length=150, blank=True)
 	
 	def __unicode__(self):
 		return self.user.username

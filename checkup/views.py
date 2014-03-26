@@ -118,7 +118,7 @@ def surveyform(request, assignment_id):
                 #If they didn't set up their server.
                 pass
 
-            return HttpResponseRedirect('/checkup/thanks/' + assignment.form_slug + '/')
+            return HttpResponseRedirect('answers/checkup/thanks/' + assignment.form_slug + '/')
     else:
         form = SurveyForm(assignment=assignment)
 

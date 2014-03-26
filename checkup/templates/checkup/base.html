@@ -4,7 +4,7 @@
 {% block head %}
     <head>
     
-    <title>{% block title %}CheckUp{% endblock %}</title>
+    <title>{% block title %}Trauma survey{% endblock %}</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -31,9 +31,10 @@
 {% endblock head %}
         
     <body>
+<div id="topbar"><a href="http://www.tampabay.com"><img src="http://tbprojects.s3.amazonaws.com/trauma/answers/static/checkup/images/times_logo_horiz_white_.gif" alt="tampabay.com" /></a></div>    
     {% block body_top %}{% endblock body_top %}
     {% block content %}{% endblock content %}
-    <div class="footer">{% block footer %}{% endblock footer %}</div>
+    <div class="footer">{% block footer %}<p>Copyright © {% now 'Y' %} Tampa Bay Times</p><p>Site powered by <a href="https://github.com/newsday/newstools-checkup">Newstools-checkup</a>, courtesy of <a href="http://www.newsday.com/">Newsday</a></p>{% endblock footer %}</div>
     
     {% block scripts %}<!-- JavaScript -->
     <script src="{% static "checkup/js/modernizr.custom.js" %}"></script>
