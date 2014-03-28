@@ -122,6 +122,8 @@ class Question(models.Model):
 	
 	def __unicode__(self):
 		return self.question
+	class Meta:
+		ordering = ('-questiongrouporder__order',)
 
 
 class ChoiceDisplay(models.Model):

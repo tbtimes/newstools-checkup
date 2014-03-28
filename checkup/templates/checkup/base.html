@@ -15,6 +15,7 @@
     <link href="{% static "checkup/css/overviewmq.css" %}" rel="stylesheet" media="screen">
     {% endblock styles %}
     {% block fonts %}
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300|Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400,300' rel='stylesheet' type='text/css'>
     {% endblock fonts %}
     {% block share %}{% endblock share %}
@@ -37,6 +38,32 @@
     <div class="footer">{% block footer %}<p>Copyright © {% now 'Y' %} Tampa Bay Times</p><p>Site powered by <a href="https://github.com/newsday/newstools-checkup">Newstools-checkup</a>, courtesy of <a href="http://www.newsday.com/">Newsday</a></p>{% endblock footer %}</div>
     
     {% block scripts %}<!-- JavaScript -->
+    <script>
+    WebFontConfig = {
+    	google: { families: ['Bevan::latin', 'Francois+One::latin'] },
+    	fontinactive: function (fontFamily, fontDescription) {
+    		//Something went wrong! Let's load our local fonts.
+    		WebFontConfig = {
+    			custom: { families: ['Bevan', 'Francois+One'],
+    				urls: ['http://www.tampabay.com/iwov-resources/fonts/bevan.css', 'http://www.tampabay.com/iwov-resources/fonts/francoisone.css'] }
+    		};
+    	loadFonts();
+    	}
+    };
+    
+    function loadFonts() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1.0.31/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    }
+    (function () {
+      loadFonts();
+    })();        
+    </script>
     <script src="{% static "checkup/js/modernizr.custom.js" %}"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="{% static "checkup/js/underscore-min.js" %}"></script>

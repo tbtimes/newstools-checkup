@@ -2,4 +2,4 @@
 
 <p>We sent {{ assign.respondent.last_name }} the following questions and offered {{ assign.respondent.last_name }} unlimited space to respond on this page.</p>
 
-<p>{% if assign.respondent.twitter %}Send {% if assign.respondent.gender == "M" %}him{% else %}her {% endif %} a tweet or t{% else %}T{% endif %}ell {% if assign.respondent.gender == "M" %}him{% else %}her{% endif %} what you think in the <a class="alert-link" href="#comment-box">comments</a>.</p>
+{% if assign.respondent.twitter %}<p>Send {% if assign.respondent.gender == "M" %}him{% else %}her {% endif %} a tweet.</p>{% endif %}

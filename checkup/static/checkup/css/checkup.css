@@ -13,7 +13,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto Condensed',sans-serif;
+/*    font-family: 'Francois One',sans-serif; */
+    font-family: "Oswald";
     font-weight: 900;
 }
 .comments {
@@ -54,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 /**************
  * Survey viz *
  **************/
-#survey h1, .titleCont h1 {color: #000000;font-size: 71px;line-height: 0.9em;margin-bottom: 50px;width: 92%;}
+#survey h1, .titleCont h1 {color: #000000;font-size: 71px;margin-bottom: 50px;width: 92%;}
 .titleCont img {float:left;padding: 0 30px 0 90px;}
 h4, .h4 {font-size: 30px;color:#000;}
 .byline {text-align:left; margin:0 0 30px;}
@@ -171,7 +172,8 @@ h4, .h4 {font-size: 30px;color:#000;}
 
 
 .question-title .question {
-  font-family: 'Roboto Condensed',sans-serif;
+/*   font-family: 'Roboto Condensed',sans-serif; */
+  font-family: "Oswald";
   font-weight: 600;
   margin: 0 0; padding-top: 20px; padding-bottom: 35px;
   position: relative;
@@ -224,7 +226,7 @@ aside.question-leadin small { display: block; }
   display: inline-block;  vertical-align: middle;
 }
 .back-button .text {
-  font-family: 'Roboto Condensed', sans-serif; font-weight: 900;
+  font-family: 'Francois One', sans-serif; font-weight: 900;
   display: inline-block;  vertical-align: middle; white-space: normal;
 }
 
@@ -277,7 +279,7 @@ aside.question-leadin small { display: block; }
 .control-big:active, .control-big:focus { opacity: 0.4; }
 
 .control-label {
-  font-family: 'Roboto Condensed',sans-serif;
+  font-family: 'Francois One',sans-serif;
   font-size: 16px; font-weight: 900;
   color: #428bca; width: 100%; display: block;
   margin-top: -15px; text-align: center; line-height: 22px;
@@ -317,7 +319,7 @@ aside.question-leadin small { display: block; }
 }
 
 .tiny-controls-bar {
-  font-family: 'Roboto Condensed',sans-serif; font-size: 20px; font-weight: 900;
+  font-family: 'Francois One',sans-serif; font-size: 20px; font-weight: 900;
   width: 100%; margin: 20px 0;
   text-align: center;
   color: #428bca;
@@ -327,7 +329,7 @@ aside.question-leadin small { display: block; }
 .control-tiny.control-prev { margin-right: -4px; }
 
 
-.jumpBtn {border-radius: 4px;color: #FFFFFF;display: block;font-family: 'Roboto Condensed',sans-serif;font-size: 20px;height: 76px;line-height: 1em;margin: 0 0 10px;padding: 30px 40px 0 89px;position: relative;}
+.jumpBtn {border-radius: 4px;color: #FFFFFF;display: block;font-family: 'Francois One',sans-serif;font-size: 20px;height: 76px;line-height: 1em;margin: 0 0 10px;padding: 30px 40px 0 89px;position: relative;}
 .jumpBtn span {border-radius: 4px 0 0 4px; float: left; height: 76px; left: 0; position: absolute; top: 0; width: 72px; }
 .jumpBtn img { border: 0 none; margin: 18px 0 0 16px; }
 .jumpBtn em {display: block; height: 27px; left: 70px; position: absolute; top: 26px; width: 13px; }
