@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-{% load staticfiles %}
+{% extends base_template %}
+
+{% load static %}
 <html lang="en">
 	<head>
 		<title>{% block title %}Thank you!{% endblock %}</title>
@@ -9,14 +10,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="{% static "checkup/css/bootstrap.css" %}" rel="stylesheet" media="screen">
 		
-<!--
-		<link href="http://data.newsday.com/_common/css/bootheader.css" rel="stylesheet">
-		<link href="http://data.newsday.com/_common/css/simple-share.css" rel="stylesheet">  
--->
-		
 		<!-- Fonts -->		
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,700' rel='stylesheet' type='text/css'>
-		
+<!-- 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,700' rel='stylesheet' type='text/css'> -->		
 		<!-- JavaScript plugins (requires jQuery) -->
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->

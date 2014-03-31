@@ -65,7 +65,7 @@ def surveyform(request, assignment_id):
         and Comment.objects.filter(assignment=assignment).exists())
 
     if complete_check:
-        return HttpResponseRedirect('/checkup/thanks/' + assignment.form_slug + '/')
+        return HttpResponseRedirect('/answers/checkup/thanks/' + assignment.form_slug + '/')
     else:
         Answer.objects.filter(assignment=assignment).delete()
         Comment.objects.filter(assignment=assignment).delete()
@@ -117,8 +117,7 @@ def surveyform(request, assignment_id):
             except AttributeError:
                 #If they didn't set up their server.
                 pass
-
-            return HttpResponseRedirect('answers/checkup/thanks/' + assignment.form_slug + '/')
+            return HttpResponseRedirect('/answers/checkup/thanks/' + assignment.form_slug + '/')
     else:
         form = SurveyForm(assignment=assignment)
 

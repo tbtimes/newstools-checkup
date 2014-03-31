@@ -26,13 +26,13 @@ class AssignmentAdmin(admin.ModelAdmin):
 #	change_list_template = 'admin/change_list_filter_sidebar.html'
 # 	change_list_filter_template = 'admin/filter_listing.html'
 	list_display = ('respondent', 'respondent_link', 'phone', 'email', 'contacted', 'visits',
-		'receipt_confirmed', 'survey_complete', 'confirmation_sent', 'reporter', 'form_url',)
+		'receipt_confirmed', 'survey_complete', 'reporter', 'form_url',)
 	list_filter = ('survey', 'reporter', 'contacted', 'receipt_confirmed', 
 		'survey_complete', 'confirmation_sent')
 	readonly_fields = ('form_url', 'respondent_link', 'display_url', 'survey_complete', 
-		'visits', 'phone', 'email',)
+		'visits')
 	list_editable = ('contacted', 'receipt_confirmed', 
-		'confirmation_sent', 'reporter')
+		'reporter')
 
 	def form_url(self, instance):
 		form_url = None

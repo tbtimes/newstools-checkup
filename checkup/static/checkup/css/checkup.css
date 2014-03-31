@@ -74,11 +74,11 @@ h4, .h4 {font-size: 30px;color:#000;}
 }
 
 .item {
-  width: 88px; height: 150px;
+  width: 88px; height: 133px;
   margin: 3px; margin-top: 10px; color: #000;
   display: block;
 }
-.item img { height: 105px; }
+.item img { height: 114px; }
 
 .respondent-commented { opacity: 0.2; position: absolute; bottom: 20px; right: 0px; }
 .respondent-commented img { width: 25px; height: 25px; }
@@ -98,7 +98,7 @@ h4, .h4 {font-size: 30px;color:#000;}
 
 .item .name {
   line-height: 12px;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 .item .name .respondent-title {
   font-size: 10px;
@@ -111,13 +111,13 @@ h4, .h4 {font-size: 30px;color:#000;}
   background-color: white;
   padding-left: 3px; padding-bottom: 3px;
   border-bottom-left-radius: 8px;
-  font-size: 10px; opacity: 0.8;
+  font-size: 10px; opacity: 0.9;
 }
 .item .name .respondent-party.D {
-  color: rgba(100, 100, 255, 0.6);
+  color: rgba(100, 100, 255, 0.9);
 }
 .item .name .respondent-party.R {
-  color: rgba(255, 100, 100, 0.6);
+  color: rgba(255, 100, 100, 0.9);
 }
 
 .bin { min-height: 200px; padding-top: 15px; }
@@ -180,7 +180,7 @@ h4, .h4 {font-size: 30px;color:#000;}
   color:#000; font-size: 40px; background-color: #fff;
 }
 
-aside.question-leadin { font-size: 23px; margin: 0 auto; text-align: left; }
+aside.question-leadin { font-family: "Oswald"; font-size: 23px; margin: 0 auto; text-align: left; }
 aside.question-leadin small { display: block; }
 
 .question-title.stuck { position: fixed; background-color: white; z-index: 100; }
