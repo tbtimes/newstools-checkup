@@ -82,7 +82,7 @@ class AssignmentAdmin(admin.ModelAdmin):
 class RespondentAdmin(admin.ModelAdmin):
 	fieldsets = (
 		(None, {
-			'fields': ('group', 'headshot')
+			'fields': ('group', 'headshot', 'myslug')
 		}),
 		('How to print their name...', {
 			'fields': ('title', 'party', 'district', 'gender', 'first_name', 'last_name')
@@ -96,7 +96,7 @@ class RespondentAdmin(admin.ModelAdmin):
 		}),
 	)
 	
-	list_display = ('first_name', 'last_name', 'gender', 'office_phone', 'email', 
+	list_display = ('first_name', 'last_name', 'myslug', 'gender', 'office_phone', 'email', 
 		'contact_name', 'contact_phone', 'contact_email',)
 	list_filter = ['group']
 	list_editable = ('gender',)
