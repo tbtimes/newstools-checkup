@@ -293,8 +293,8 @@ class ContributionType(models.Model):
 class Contribution(models.Model):
 	contrib_type = models.ForeignKey("ContributionType")
 	assignment = models.ForeignKey('Assignment', related_name="contributions")
-	contrib_count = models.IntegerField()
-	years = models.CharField(max_length=255)
+	contrib_count = models.IntegerField(blank=True, null=True)
+	years = models.CharField(max_length=255, blank=True, null=True)
 	amount = models.DecimalField(max_digits=12, decimal_places=2)
 
 	def __unicode__(self):

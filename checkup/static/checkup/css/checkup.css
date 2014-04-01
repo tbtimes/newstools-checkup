@@ -80,7 +80,7 @@ h4, .h4 {font-size: 30px;color:#000;}
 }
 .item img { height: 114px; }
 
-.respondent-commented { opacity: 0.2; position: absolute; bottom: -3px; right: 0px;}
+.respondent-commented { opacity: 0.9; position: absolute; bottom: 15px; right: 0px;}
 .respondent-commented img { width: 25px; height: 25px;}
 
 
