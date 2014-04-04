@@ -80,6 +80,7 @@ class AssignmentAdmin(admin.ModelAdmin):
 
 	
 class RespondentAdmin(admin.ModelAdmin):
+	search_fields = ['last_name', 'first_name']
 	fieldsets = (
 		(None, {
 			'fields': ('group', 'headshot', 'myslug')

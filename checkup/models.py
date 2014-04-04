@@ -83,6 +83,7 @@ class Respondent(models.Model):
 	gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
 	first_name = models.CharField(max_length=75)
 	last_name = models.CharField(max_length=75)
+	hometown = models.CharField(max_length=150, blank=True)
 	website = models.URLField(max_length=254, blank=True)
 	office_phone = PhoneNumberField(blank=True, help_text='The number the public calls to talk with this person.')
 	email = models.EmailField(max_length=254, blank=True)

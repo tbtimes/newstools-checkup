@@ -171,7 +171,7 @@ def survey_feed(request, slug):
     
     data['assignments'] = assignments
     data = json.dumps(data, sort_keys=False, indent=4)
-    return HttpResponse(data, mimetype='application/json')
+    return HttpResponse(data, content_type='application/json')
     
 def overview_feed(request, slug):
     '''
@@ -214,7 +214,7 @@ def overview_feed(request, slug):
     data['feed_updated'] = str(datetime.datetime.now())
     
     data = json.dumps(data, sort_keys=False, indent=4)
-    return HttpResponse(data, mimetype='application/json')
+    return HttpResponse(data, content_type='application/json')
 
 class BaseView(BuildableDetailView):
     def get_context_data(self, *args, **kwargs):

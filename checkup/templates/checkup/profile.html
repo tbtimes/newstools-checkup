@@ -143,7 +143,7 @@
 										{% if assign.survey_complete %}
 											<blockquote><em>{{ assign.respondent.last_name }} did not provide any comments.</em></blockquote>
 										{% else %}
-											<blockquote><em class="lead">{{ assign.respondent.last_name }} has not filled in the survey.</em></blockquote>
+											<blockquote><em class="lead">{{ assign.respondent.last_name }} did not respond to the survey or offer comments.</em></blockquote>
 										{% endif %}
 									{% endif %}
 								</div>
@@ -155,23 +155,23 @@
 				<div class="col-xs-12 col-sm-3 pull-left sidebar">
 					<div class="panel panel-default hidden-xs">
 						<div class="panel-heading">
-							<h5 class="panel-title">{{ assign.respondent.get_party_display }}-{{ assign.respondent.city }}</h5>
+							<h5 class="panel-title">{{ assign.respondent.get_party_display }} ({{ assign.respondent.hometown }})</h5>
 						</div>
 					</div>
 					
-					{% for contrib in assign.contribs %}{% with lbl=contrib.0 %}
+{% comment %}					{% for contrib in assign.contribs %}{% with lbl=contrib.0 %}
 					<div class="panel panel-info">
 						<div class="panel-heading">
-{% comment %}							<div class="pull-right"><img src="{% static "checkup/img/dollar.svg" %}"></div> {% endcomment %}
+							<div class="pull-right"><img src="{% static "checkup/img/dollar.svg" %}"></div> 
 							<h5 class="panel-title">{{ lbl.label|safe }}</h5>
 						</div>
 						<div class="list-group-item text-center">
 							{% spaceless %}{% if contrib.1 %}{% with c=contrib.1 %}
 							<h3>${{ c.amount|floatformat|intcomma }}</h3>
 							<em>    
-{% comment %}
+
 							 	{{ c.contrib_count|apnumber|capfirst }} contributions, <br>
-{% endcomment %}
+
 							 	{{ c.years }}
 							 </em>
 							 {% endwith %}{% else %}
@@ -186,7 +186,7 @@
 						</div>
 					</div>
 					{% endwith %}{% endfor %}
-					
+{% endcomment %}					
 					<div class="panel panel-info">
 						<div class="panel-heading">
 <!-- 							<div class="pull-right"><img src="{% static "checkup/img/contact.svg" %}"></div> -->

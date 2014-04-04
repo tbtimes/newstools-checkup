@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-<html lang="en">
+<html lang="en-us">
 {% block head %}
     <head>
     
     <title>{% block title %}Trauma survey{% endblock %}</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" type="image/ico" href="http://www.tampabay.com/universal/images/template/favicon.ico" />
+    <link rel="icon" type="image/gif" href="http://www.tampabay.com/universal/images/template/favicon.gif" />     
     {% block styles %}
     <link href="{% static "checkup/css/bootstrap.css" %}" rel="stylesheet" media="screen">
     <link href="{% static "checkup/css/animate+animo.css" %}" rel="stylesheet" media="screen">
@@ -35,7 +37,10 @@
 <div id="topbar"><a href="http://www.tampabay.com"><img src="http://tbprojects.s3.amazonaws.com/trauma/answers/static/checkup/images/times_logo_horiz_white_.gif" alt="tampabay.com" /></a></div>    
     {% block body_top %}{% endblock body_top %}
     {% block content %}{% endblock content %}
-    <div class="footer">{% block footer %}<p>Copyright © {% now 'Y' %} Tampa Bay Times</p><p>Site powered by <a href="https://github.com/newsday/newstools-checkup">Newstools-checkup</a>, courtesy of <a href="http://www.newsday.com/">Newsday</a></p>{% endblock footer %}</div>
+
+
+    <div class="footer">{% block footer %}{% include "checkup/byline.html" %}
+<p>Copyright&nbsp;© {% now 'Y' %} Tampa Bay Times</p>{% endblock footer %}</div>
     
     {% block scripts %}<!-- JavaScript -->
     <script>
