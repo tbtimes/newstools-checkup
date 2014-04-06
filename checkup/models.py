@@ -267,7 +267,7 @@ class Answer(models.Model):
 	answer = models.ForeignKey('Choice')
 	
 	class Meta:
-		ordering = ['assignment','question__order']
+		ordering = ['-pk', 'assignment']
 		unique_together = (('assignment', 'question'),)
 
 	def __unicode__(self):

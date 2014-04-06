@@ -4,6 +4,7 @@ import random
 import datetime
 from collections import OrderedDict
 
+from django.template import loader, Context
 from django.contrib.auth.decorators import login_required
 from django import template
 from django.conf import settings
@@ -34,6 +35,60 @@ def dash(request):
         'rdate': rdate,
        }
     return render(request, 'dash.html', cdict)
+    
+def bay_lawmakers(request):
+    BAY_DISTRICTS = {
+        'Hernando': {"house": [34, 35], "senate": [18]},
+        'Pasco': {"house": [36, 37, 38], "senate": [17, 18]},
+        'Pinellas': {"house": [64, 65, 66, 67, 68, 69, 70], "senate": [19, 20, 22]},
+        'Hillsborough': {"house": [57, 58, 59, 60, 61, 62, 63], "senate": [17, 19, 24, 26]},
+    }
+    senate = []
+    house = []
+
+    for each in BAY_DISTRICTS:
+        senate.extend([num for num in BAY_DISTRICTS[each]['senate']])
+        house.extend([num for num in BAY_DISTRICTS[each]['house']])
+    senate=sorted(set(senate))
+    house=sorted(set(house))
+
+    bayhouse=[]
+    for each in house:
+        bayhouse.append(Respondent.objects.get(district="House District %s" % each))
+
+    baysenate = []
+    for each in senate:
+        baysenate.append(Respondent.objects.get(district="Senate District %s" % each))
+
+    def divide_body(body):
+        bodyd = { 'yeas': [], 'nays': [], 'nons': [] }
+        for pol in body:
+            ass = pol.assignments.all()[0]
+            answers = [ans.answer.choice for ans in ass.answers.all()]
+            if not answers:
+                bodyd['nons'].append(pol)
+            elif answers==['No', 'No', 'No']:
+                bodyd['nays'].append(pol)
+            elif 'Yes' in answers:
+                    bodyd['yeas'].append(pol)
+            else:
+                bodyd['nons'].append(pol)
+        return bodyd
+
+    housed = divide_body(bayhouse)
+    senated = divide_body(baysenate)    
+    rdate = datetime.datetime.now()
+    cdict = {
+        'rdate': rdate,
+        'housed': housed,
+        'senated': senated
+       }
+    response = HttpResponse(content_type='text/txt')
+    response['Content-Disposition'] = 'attachment; filename=bay_area_lawmakers.txt'
+    t = loader.get_template('print/survey-print.html')
+    c = Context(cdict)
+    response.write(t.render(c))
+    return response
 
 #Limit requests to this view to 1,200 per hour from one IP address
 #for both GET and POST. If ratelimited, throw a 403.

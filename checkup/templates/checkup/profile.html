@@ -155,7 +155,7 @@
 				<div class="col-xs-12 col-sm-3 pull-left sidebar">
 					<div class="panel panel-default hidden-xs">
 						<div class="panel-heading">
-							<h5 class="panel-title">{{ assign.respondent.get_party_display }} ({{ assign.respondent.hometown }})</h5>
+							<h5 class="panel-title">{{ assign.respondent.get_party_display }}{% if assign.respondent.hometown %} ({{ assign.respondent.hometown }}){% endif %}</h5>
 						</div>
 					</div>
 					

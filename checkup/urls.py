@@ -4,7 +4,9 @@ from django.conf import settings
 from checkup import views
 
 urlpatterns = patterns('',
+    # internal
     url(r'^dashboard/$', views.dash),
+    url(r'^survey-print/$', views.bay_lawmakers),
     # Survey-side
     url(r'^forms/(?P<assignment_id>\d+-\w+)/$', views.surveyform, name='surveyform'),
     url(r'^thanks/(?P<assignment_id>\d+-\w+)/$', views.thanks, name='thanks'),

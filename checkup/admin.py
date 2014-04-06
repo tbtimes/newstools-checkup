@@ -116,6 +116,9 @@ class SurveyAdmin(admin.ModelAdmin):
         
 class ContributionAdmin(admin.ModelAdmin):
 	list_display = ('assignment', 'contrib_count', 'years', 'amount',)
+
+class AnswerAdmin(admin.ModelAdmin):
+	list_display = ('assignment', 'question', 'answer')
 	
 	
 admin.site.register(Reporter)
@@ -125,12 +128,12 @@ admin.site.register(Question, QuestionAdmin)
 admin.site.register(QuestionGroup, QuestionGroupAdmin)
 admin.site.register(Assignment, AssignmentAdmin)
 admin.site.register(Contribution, ContributionAdmin)
+admin.site.register(Answer, AnswerAdmin)
 
 admin.site.register(Group)
 admin.site.register(FormRequest)
 admin.site.register(Title)
 admin.site.register(Choice)
 admin.site.register(ChoiceDisplay)
-admin.site.register(Answer)
 admin.site.register(Comment)
 admin.site.register(ContributionType)
