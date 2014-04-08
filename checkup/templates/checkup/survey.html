@@ -111,4 +111,78 @@
     </div> <!-- /#checkup -->
     
     </div> <!-- /#survey -->
-{% endblock content %}
+<script xmlns:tbt="http://www.tampabay.com" src="http://www.tampabay.com/universal/scripts/omniture/latest_tb.js" type="text/javascript"></script>
+<script type="text/javascript">
+            
+                function ucwords( words ) {
+                    return (words + '').replace(/^([a-z])|\s+([a-z])/g, function (words) {
+                        return words.toUpperCase();
+                    });
+                }
+            
+            var attempt = new function() {
+                this.counter = 0;
+                this.max_time = 1000; // The maximum amount of time to wait for the user data, in milliseconds
+                this.timeout = 100; // The amount of time between tries, in milliseconds
+            }
+            
+            executeSiteCatalystRequest();
+            
+            function executeSiteCatalystRequest() {
+
+                /* E-conversion Variables */
+        
+                // Get the county, if it is available
+                s_spt.eVar18=s_spt.prop18='';
+                s_adzone = 'topics_specials'.replace( /'/g, '' );
+                //alert(s_adzone);
+                s_adzone_array = s_adzone.split('_');
+
+                if ( s_adzone_array.length > 1 && s_adzone_array[0] == 'news' ) {
+                    county = s_adzone_array[1];
+                    counties_array = ['hillsborough', 'pinellas', 'hernando', 'pasco'];
+                    // If we can identify the story's county, populate prop18/eVar18.
+                    if ( jQuery.inArray( county, counties_array ) > -1 ) {
+                        s_spt.eVar18=s_spt.prop18=ucwords(county);
+                    }
+                }
+
+                var sc_registration_status = "Non-Registered";
+                var sc_login_status = "Not Logged In";
+
+                s_spt.eVar1 = s_spt.prop1 = sc_registration_status;
+                //alert(sc_registration_status);
+                s_spt.prop13=s_spt.eVar13 = sc_login_status;
+                //alert(sc_login_status);
+        
+                s_spt.server= "www.tampabay.com";
+                s_pathname_array = window.location.pathname.split('/');
+                s_pathname_prefix = s_pathname_array[1];
+                s_pathname_ucfirst = ucwords( s_pathname_prefix );
+                
+                s_spt.pageName=s_spt.eVar30=s_spt.prop28=s_spt.eVar28="Topics: Specials: Trauma Fees Specials: Survey";
+        
+                s_spt.channel=s_spt.prop2=s_spt.eVar2='Topics';
+                s_spt.prop3=s_spt.eVar3='Specials';
+                s_spt.prop4=s_spt.eVar4='2014';
+                s_spt.prop5=s_spt.eVar5='Survey';
+                s_spt.hier1='Topics,Specials,2014,Trauma-survey';
+                s_spt.hier2='Topics,Specials,2014,Trauma-survey';
+                s_spt.prop11=s_spt.eVar11='';
+                s_spt.prop12=s_spt.eVar12='';
+                s_spt.prop21=s_spt.eVar21='';
+                s_spt.prop22=s_spt.eVar22='';
+                s_spt.prop23=s_spt.eVar23='';
+                s_spt.prop24=s_spt.eVar24='';
+                s_spt.prop25=s_spt.eVar25='';
+                s_spt.prop27=s_spt.eVar27='Index';
+                s_spt.eVar29=s_spt.prop29=''; 
+                
+                /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+                
+                var s_code=s_spt.t();if(s_code)document.write(s_code);
+                    
+            }
+            </script><noscript>
+<a title="Web Analytics" href="http://www.omniture.com"><img alt="" border="0" width="1" height="1" src="http://metric.sptimes.com/b/ss/spttbglobal/1/H.22.1--NS/0"></a>
+</noscript>{% endblock content %}

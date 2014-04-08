@@ -83,7 +83,7 @@ class RespondentAdmin(admin.ModelAdmin):
 	search_fields = ['last_name', 'first_name']
 	fieldsets = (
 		(None, {
-			'fields': ('group', 'headshot', 'myslug')
+			'fields': ('group', 'headshot', 'myslug', 'hometown')
 		}),
 		('How to print their name...', {
 			'fields': ('title', 'party', 'district', 'gender', 'first_name', 'last_name')
