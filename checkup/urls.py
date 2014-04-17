@@ -8,7 +8,8 @@ urlpatterns = patterns('',
     url(r'^dashboard/$', views.dash),
     url(r'^survey-print/$', views.bay_lawmakers),
     # Survey-side
-    url(r'^forms/(?P<assignment_id>\d+-\w+)/$', views.surveyform, name='surveyform'),
+#     url(r'^forms/(?P<assignment_id>\d+-\w+)/$', views.surveyform, name='surveyform'),
+    url(r'^forms/(?P<assignment_id>\d+-\w+)/$', views.sorry, name='sorry'),
     url(r'^thanks/(?P<assignment_id>\d+-\w+)/$', views.thanks, name='thanks'),
     # Display-side
     url(r'^(?P<survey_slug>[\w-]+)/(?P<slug>[\d]+-[\w-]+)/$',

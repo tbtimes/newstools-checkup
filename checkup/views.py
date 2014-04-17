@@ -183,6 +183,15 @@ def surveyform(request, assignment_id):
         }
     return render(request, 'checkup/surveyform.html', context)
 
+def sorry(request, assignment_id):
+    assignment = get_object_or_404(Assignment, form_slug=assignment_id)
+    
+    context = {
+        'assignment' : assignment,
+        'base_template': base_template
+        }
+    return render(request, 'checkup/sorry.html', context)
+
 def thanks(request, assignment_id):
     assignment = get_object_or_404(Assignment, form_slug=assignment_id)
     
